@@ -7,6 +7,13 @@ public class couch implements DrawingObject{
   private double y;
   private double width;
   private double height;
+  private square Square;
+  private square Square2;
+  private square Square3;
+  private square Square4;
+  private circle Circle;
+  private circle Circle2;
+  private line Line;
 
   public couch(double x, double y, double width, double height){
     this.x = x;
@@ -16,22 +23,20 @@ public class couch implements DrawingObject{
   }
 
   public void draw(Graphics2D g2d){
-    Rectangle2D.Double r1 = new Rectangle2D.Double(x,y,width,height);
-    g2d.setColor(new Color(146,72,15));
-    g2d.fill(r1);
+    Color brown = new Color(146,72,15);
+    Color brown2 = new Color(74,34,0);
+    Square = new square(x,y,width,height,brown);
+    Square2 = new square(x-width*.08,y+height*.48,width*.125,height*.6,brown2);
+    Square3 = new square(x+width*.95,y+height*.48,width*.125,height*.6,brown2);
+    Square4 = new square(x-width*.03,y+height*.84,width*1.05,height*.4,brown2);
+    Line = new line(510,505,510,580,brown2);
 
-    Rectangle2D.Double r2 = new Rectangle2D.Double(x-width*.08,y+height*.48,width*.125,height*.6);
-    g2d.setColor(new Color(74,34,0));
-    g2d.fill(r2);
 
-    Rectangle2D.Double r3 = new Rectangle2D.Double(x+width*.95,y+height*.48,width*.125,height*.6);
-    g2d.setColor(new Color(74,34,0));
-    g2d.fill(r3);
-
-    Rectangle2D.Double r4 = new Rectangle2D.Double(x-width*.03,y+height*.84,width*1.05,height*.4);
-    g2d.setColor(new Color(74,34,0));
-    g2d.fill(r4);
-
+    Square.draw(g2d);
+    Square2.draw(g2d);
+    Square3.draw(g2d);
+    Square4.draw(g2d);
+    Line.draw(g2d);
 
 
   }

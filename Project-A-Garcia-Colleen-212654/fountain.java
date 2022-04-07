@@ -3,11 +3,14 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class fountain implements DrawingObject{
+  private square Square;
 
   public void draw(Graphics2D g2d){
-    Rectangle2D.Double r1 = new Rectangle2D.Double(150,505,715,70);
-    g2d.setColor(new Color(87,77,69));
-    g2d.fill(r1);
+    Color stone = new Color(87,77,69);
+
+    Square = new square(150,515,715,60,stone);
+
+    Square.draw(g2d);
 
   }
 

@@ -4,6 +4,10 @@ import java.awt.geom.*;
 import java.awt.event.*;
 
 public class clouds implements DrawingObject{
+  private circle Circle;
+  private circle Circle2;
+  private circle Circle3;
+  private circle Circle4;
   private double x;
   private double y;
   private double size;
@@ -17,16 +21,15 @@ public class clouds implements DrawingObject{
   }
 
   public void draw(Graphics2D g2d){
-    Ellipse2D.Double c1 = new Ellipse2D.Double(x,y,size,size);
-    Ellipse2D.Double c2 = new Ellipse2D.Double(x+size*.35, y-size*.2, size*1.75, size*1.4);
-    Ellipse2D.Double c3 = new Ellipse2D.Double(x+size*1.5, y-size*.15, size*.9, size*.9);
-    Ellipse2D.Double c4 = new Ellipse2D.Double(x+size*1.8, y-size*.05, size*.3, size*.3);
+    Circle = new circle(x,y,size,color);
+    Circle2 = new circle(x+size*.35, y-size*.6, size*1.75, Color.LIGHT_GRAY);
+    Circle3 = new circle(x+size*1.5, y-size*.15, size*.9, Color.LIGHT_GRAY);
+    Circle4 = new circle(x+size*1.8, y-size*.15, size*.3, Color.LIGHT_GRAY);
 
-    g2d.setColor(color);
-    g2d.fill(c1);
-    g2d.fill(c2);
-    g2d.fill(c3);
-    g2d.fill(c4);
+    Circle.draw(g2d);
+    Circle2.draw(g2d);
+    Circle3.draw(g2d);
+    Circle4.draw(g2d);
   }
 
   public void moveC(double n){
