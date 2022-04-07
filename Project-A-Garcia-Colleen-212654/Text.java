@@ -12,7 +12,7 @@ public class Text implements DrawingObject{
     Font font = new Font("Comic Sans MS", Font.PLAIN, 60);
     g2d.setColor(color);
     g2d.setFont(font);
-    g2d.drawString("F  R  I  E  N  D  S", 270, 270);
+    g2d.drawString("F  R  I  E  N  D  S", 270, 310);
 
 
   }

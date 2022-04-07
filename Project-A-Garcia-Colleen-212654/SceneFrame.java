@@ -19,7 +19,9 @@ public class SceneFrame{
 
   public void setUpGUI(){
     Container cp = frame.getContentPane();
+    second s = new second();
     frame.setTitle("F R I E N D S");
+    frame.add(s);
 
     cp.add(sceneCanvas, BorderLayout.CENTER);
     cp.add(button, BorderLayout.SOUTH);
@@ -28,17 +30,16 @@ public class SceneFrame{
     frame.pack();
     frame.setVisible(true);
 }
+  public class second extends JPanel implements ActionListener{
+    Timer t = new Timer(5, this);
 
-  public void setUpBottonListener(){
-    ButtonListener bl = new ButtonListener();
-    button.addActionListener(bl);
-  }
-
-  private class ButtonListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
-      sceneCanvas.getClouds().moveC(20);
+      t.start();
+      sceneCanvas.getClouds().moveC(3);
       sceneCanvas.repaint();
-    }
+
   }
+}
+
 }
